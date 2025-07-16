@@ -1,0 +1,1167 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Импорт файла с цветами */
+@import '../common/constants/colors.css';
+
+@font-face {
+  font-family: 'Museo Sans Cyrillic';
+  src: url('/fonts/museo-sans-cyrillic_300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Museo Sans Cyrillic';
+  src: url('/fonts/museo-sans-cyrillic_500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Museo Sans Cyrillic';
+  src: url('/fonts/museo-sans-cyrillic_700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #4F84E2;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --doc-sidebar-width: 315px !important;
+  --ifm-menu-link-padding-horizontal: 15px;
+  --ifm-breadcrumb-separator: url('/img/arrow.png');
+  --ifm-color-emphasis-300:var(--color-smokey-grey)
+  --ifm-link-color:#4F84E2;
+  --prism-background-color: #F3F4F6;
+  
+  /* Добавляем недостающие переменные Docusaurus */
+  --ifm-spacing-horizontal: 1rem;
+  --ifm-spacing-vertical: 1rem;
+  
+  /* Переменная для межстрочного интервала */
+  --ifm-leading-desktop: 1.25;
+  --ifm-leading: calc(var(--ifm-leading-desktop) * 1rem);
+  
+  /* Переменные для отступов и расстояний */
+  --ifm-toc-padding-horizontal: 0.5rem;
+  --ifm-toc-padding-vertical: 0.25rem;
+  --ifm-toc-spacing: 0.5rem;
+  --ifm-toc-border-radius: 0.375rem;
+  --ifm-toc-font-size: 0.875rem;
+  --ifm-toc-font-weight: 400;
+  
+  --ifm-menu-padding-horizontal: 0.5rem;
+  --ifm-menu-padding-vertical: 0.25rem;
+  --ifm-menu-spacing: 0.5rem;
+  --ifm-menu-border-radius: 0.375rem;
+  --ifm-menu-font-size: 0.875rem;
+  --ifm-menu-font-weight: 400;
+  
+  --ifm-breadcrumb-padding-horizontal: 0.5rem;
+  --ifm-breadcrumb-padding-vertical: 0.25rem;
+  --ifm-breadcrumb-border-radius: 0.375rem;
+  --ifm-breadcrumb-spacing: 0.5rem;
+  --ifm-breadcrumb-font-size: 0.875rem;
+  --ifm-breadcrumb-font-weight: 400;
+  
+  --ifm-navbar-padding-horizontal: 1rem;
+  --ifm-navbar-padding-vertical: 0.5rem;
+  --ifm-navbar-height: 3.75rem;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  
+  --ifm-footer-padding-horizontal: 1rem;
+  --ifm-footer-padding-vertical: 2rem;
+  --ifm-footer-margin-top: 3rem;
+  
+  --ifm-global-radius: 0.375rem;
+  --ifm-global-border-width: 1px;
+  --ifm-global-border-color: #e5e7eb;
+  --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ifm-global-shadow-tl: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Переменные для z-index */
+  --ifm-z-index-dropdown: 1000;
+  --ifm-z-index-sticky: 1020;
+  --ifm-z-index-fixed: 1030;
+  --ifm-z-index-modal-backdrop: 1040;
+  --ifm-z-index-modal: 1050;
+  --ifm-z-index-popover: 1060;
+  --ifm-z-index-tooltip: 1070;
+  
+  /* Переменные для контейнеров */
+  --ifm-container-width: 1140px;
+  --ifm-container-width-xl: 1320px;
+  
+  /* Переменные для отступов контента */
+  --ifm-content-padding-horizontal: 1rem;
+  --ifm-content-padding-vertical: 1rem;
+  --ifm-content-margin-top: 1rem;
+  --ifm-content-margin-bottom: 1rem;
+  
+  /* Переменные для sidebar */
+  --ifm-sidebar-width: 300px;
+  --ifm-sidebar-padding-horizontal: 1rem;
+  --ifm-sidebar-padding-vertical: 1rem;
+  
+  /* Переменные для кнопок */
+  --ifm-button-padding-horizontal: 0.75rem;
+  --ifm-button-padding-vertical: 0.5rem;
+  --ifm-button-border-radius: 0.375rem;
+  --ifm-button-font-size: 0.875rem;
+  --ifm-button-font-weight: 500;
+  
+  /* Переменные для карточек */
+  --ifm-card-padding-horizontal: 1rem;
+  --ifm-card-padding-vertical: 1rem;
+  --ifm-card-border-radius: 0.5rem;
+  --ifm-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  
+  /* Переменные для алертов */
+  --ifm-alert-padding-horizontal: 1rem;
+  --ifm-alert-padding-vertical: 0.75rem;
+  --ifm-alert-border-radius: 0.375rem;
+  --ifm-alert-margin-vertical: 1rem;
+  
+  /* Переменные для таблиц */
+  --ifm-table-cell-padding-horizontal: 0.75rem;
+  --ifm-table-cell-padding-vertical: 0.5rem;
+  --ifm-table-border-width: 1px;
+  --ifm-table-border-radius: 0.375rem;
+  
+  /* Переменные для форм */
+  --ifm-input-padding-horizontal: 0.75rem;
+  --ifm-input-padding-vertical: 0.5rem;
+  --ifm-input-border-radius: 0.375rem;
+  --ifm-input-border-width: 1px;
+  
+  /* Переменные для модальных окон */
+  --ifm-modal-padding-horizontal: 1.5rem;
+  --ifm-modal-padding-vertical: 1.5rem;
+  --ifm-modal-border-radius: 0.5rem;
+  --ifm-modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Переменные для dropdown */
+  --ifm-dropdown-padding-horizontal: 0.5rem;
+  --ifm-dropdown-padding-vertical: 0.25rem;
+  --ifm-dropdown-border-radius: 0.375rem;
+  --ifm-dropdown-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Переменные для tooltip */
+  --ifm-tooltip-padding-horizontal: 0.5rem;
+  --ifm-tooltip-padding-vertical: 0.25rem;
+  --ifm-tooltip-border-radius: 0.25rem;
+  --ifm-tooltip-font-size: 0.75rem;
+  
+  /* Переменные для badge */
+  --ifm-badge-padding-horizontal: 0.5rem;
+  --ifm-badge-padding-vertical: 0.25rem;
+  --ifm-badge-border-radius: 9999px;
+  --ifm-badge-font-size: 0.75rem;
+  --ifm-badge-font-weight: 500;
+  
+  /* Переменные для шрифтов и типографики */
+  --ifm-heading-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-margin-top: 2rem;
+  --ifm-heading-margin-bottom: 1rem;
+  --ifm-heading-line-height: 1.25;
+  
+  /* Переменные для заголовков */
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-h1-font-weight: 700;
+  --ifm-h1-margin-top: 0;
+  --ifm-h1-margin-bottom: 1rem;
+  --ifm-h1-line-height: 1.2;
+  
+  --ifm-h2-font-size: 1.875rem;
+  --ifm-h2-font-weight: 600;
+  --ifm-h2-margin-top: 2rem;
+  --ifm-h2-margin-bottom: 0.75rem;
+  --ifm-h2-line-height: 1.3;
+  
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h3-font-weight: 600;
+  --ifm-h3-margin-top: 1.5rem;
+  --ifm-h3-margin-bottom: 0.5rem;
+  --ifm-h3-line-height: 1.4;
+  
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h4-font-weight: 500;
+  --ifm-h4-margin-top: 1.25rem;
+  --ifm-h4-margin-bottom: 0.5rem;
+  --ifm-h4-line-height: 1.4;
+  
+  --ifm-h5-font-size: 1.125rem;
+  --ifm-h5-font-weight: 500;
+  --ifm-h5-margin-top: 1rem;
+  --ifm-h5-margin-bottom: 0.5rem;
+  --ifm-h5-line-height: 1.4;
+  
+  --ifm-h6-font-size: 1rem;
+  --ifm-h6-font-weight: 500;
+  --ifm-h6-margin-top: 1rem;
+  --ifm-h6-margin-bottom: 0.5rem;
+  --ifm-h6-line-height: 1.4;
+  
+  /* Переменные для параграфов */
+  --ifm-paragraph-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-paragraph-font-size: 16px;
+  --ifm-paragraph-font-weight: 300;
+  --ifm-paragraph-line-height: 27px;
+  --ifm-paragraph-margin-top: 0;
+  --ifm-paragraph-margin-bottom: 1rem;
+  
+  /* Переменные для списков */
+  --ifm-list-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-list-font-size: 16px;
+  --ifm-list-font-weight: 300;
+  --ifm-list-line-height: 27px;
+  --ifm-list-margin-top: 0;
+  --ifm-list-margin-bottom: 1rem;
+  --ifm-list-padding-left: 1.5rem;
+  
+  /* Переменные для элементов списка */
+  --ifm-list-item-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-list-item-font-size: 16px;
+  --ifm-list-item-font-weight: 300;
+  --ifm-list-item-line-height: 27px;
+  --ifm-list-item-margin-bottom: 0.5rem;
+  
+  /* Переменные для ссылок */
+  --ifm-link-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-link-font-size: 16px;
+  --ifm-link-font-weight: 300;
+  --ifm-link-line-height: 27px;
+  
+  /* Переменные для кода */
+  --ifm-code-font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+  --ifm-code-font-size: 95%;
+  --ifm-code-font-weight: 300;
+  --ifm-code-padding-horizontal: 0.5rem;
+  --ifm-code-padding-vertical: 0.1rem;
+  --ifm-code-border-radius: 0.25rem;
+  
+  /* Переменные для блоков кода */
+  --ifm-pre-font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+  --ifm-pre-font-size: 1rem;
+  --ifm-pre-font-weight: 300;
+  --ifm-pre-line-height: 1.5;
+  --ifm-pre-padding: 1rem;
+  --ifm-pre-border-radius: 0.375rem;
+  
+  /* Переменные для цитат */
+  --ifm-blockquote-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-blockquote-font-size: 1rem;
+  --ifm-blockquote-font-weight: 300;
+  --ifm-blockquote-line-height: 1.6;
+  --ifm-blockquote-padding-left: 1rem;
+  --ifm-blockquote-border-left-width: 4px;
+  --ifm-blockquote-margin: 1rem 0;
+  
+  /* Переменные для таблиц */
+  --ifm-table-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-table-font-size: 16px;
+  --ifm-table-font-weight: 300;
+  --ifm-table-line-height: 19px;
+  
+  /* Переменные для навигации */
+  --ifm-navbar-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-navbar-font-size: 1rem;
+  --ifm-navbar-font-weight: 400;
+  
+  /* Переменные для меню */
+  --ifm-menu-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-menu-font-size: 0.875rem;
+  --ifm-menu-font-weight: 400;
+  
+  /* Переменные для хлебных крошек */
+  --ifm-breadcrumb-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-breadcrumb-font-size: 16px;
+  --ifm-breadcrumb-font-weight: 300;
+  --ifm-breadcrumb-line-height: 21px;
+  
+  /* Переменные для TOC */
+  --ifm-toc-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-toc-font-size: 16px;
+  --ifm-toc-font-weight: 300;
+  --ifm-toc-line-height: 19px;
+  
+  /* Переменные для футера */
+  --ifm-footer-font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  --ifm-footer-font-size: 0.875rem;
+  --ifm-footer-font-weight: 400;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-emphasis-300:var(--color-smokey-grey);
+  color: var(--color-dark-text);
+  
+  /* Переменные расстояний для темной темы (только те, которые могут отличаться) */
+  --ifm-global-border-color: #2d2d30;
+  --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --ifm-global-shadow-tl: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --ifm-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --ifm-dropdown-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --ifm-modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для всех текстовых элементов в темной теме */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6,
+[data-theme='dark'] p,
+[data-theme='dark'] li,
+[data-theme='dark'] span,
+[data-theme='dark'] div {
+  color: #C2C2C2 !important;
+}
+
+/* Стили для ссылок в темной теме */
+[data-theme='dark'] a {
+  color: #4F84E2 !important;
+}
+
+h1{
+  margin-bottom: 10px !important;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+}
+img{
+  margin-bottom: 1.25rem !important;
+}
+
+.markdown li::marker{
+  color: var(--color-smokey-grey) !important;
+}
+
+li, p, a, span{
+  font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  font-weight: 300 !important;
+  font-size: 16px !important;
+  line-height: 27px !important;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+li {
+  font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 27px;
+  margin-bottom: 0;
+}
+ul{
+  padding-left: 32px !important;
+}
+
+a {
+  font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 27px;
+  text-decoration: none !important;
+}
+
+a:hover{
+  opacity: 0.8;
+}
+
+/* Ограничение ширины основного контента */
+.main-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+
+}
+.row {
+  margin: 0 auto !important;
+  flex-wrap: nowrap !important;
+  height: 100%;
+}
+.row:has(article){
+  flex-wrap: wrap !important;
+}
+
+/* Базовый класс col (без дополнительных модификаторов) */
+.col:not([class*="--"]):not([class*=" col-"]) {
+  border-right: 1px solid var(--color-gray-e0);
+  padding: 30px 40px 115px 40px;
+}
+
+/* Стили для темной темы */
+[data-theme='dark'] .col:not([class*="--"]):not([class*=" col-"]) {
+  border-right: 1px solid var(--color-dark-light-bg);
+}
+
+@media (max-width: 996px) {
+  .col:not([class*="--"]):not([class*=" col-"]) {
+    padding: 30px 30px 115px 30px !important;
+  }
+}
+
+/* Современный способ - применяем стили только к .container без потомка .row */
+
+
+/* Альтернативный способ для лучшей совместимости браузеров */
+.container {
+  padding: 0 !important;
+}
+
+.theme-doc-version-badge{
+  display: none !important;
+}
+
+/* Применяем padding: 0 только к .container, который содержит .row */
+
+
+/* Применяем стили к .container, если его потомок имеет класс содержащий "generatedIndex" */
+.container:has([class*="generatedIndex"]) {
+  padding-top: 30px !important;
+  padding-left: 56px !important;
+  /* Дополнительные стили можно добавить здесь */
+}
+
+p code {
+  background-color: var(--color-brand-tint);
+  padding: 0.1rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+    font-weight: 300 !important;
+    font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+    border: none !important;
+}
+[data-theme='dark'] p code {
+  background-color: var(--color-dark-footer-bg);
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+}
+
+/* Стили для Breadcrumbs */
+/* Основные стили breadcrumbs */
+.breadcrumbs,
+:global(.breadcrumbs) {
+  font-size: 16px !important;
+  line-height: 21px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Скрываем первый элемент breadcrumbs (Дом) */
+.breadcrumbs > :first-child {
+  display: none !important;
+}
+
+
+
+
+
+/* Стили для элементов breadcrumbs */
+.breadcrumbs__item{
+  font-size: 16px !important;
+  line-height: 21px !important;
+}
+
+/* Стили для ссылок в breadcrumbs */
+.breadcrumbs__link {
+  font-size: 16px !important;
+  line-height: 19px !important;
+  font-weight: 300 !important;
+  color: var(--color-grey-text) !important;
+  text-decoration: none !important;
+  background: none !important;
+  padding-left: 0 !important;
+  padding-right: 5px !important;
+}
+[data-theme='dark'] .breadcrumbs__link{
+  color: var(--color-dark-text) !important;
+}
+[data-theme='dark'] .breadcrumbs__link:hover{
+  color: var(--color-dark-text) !important;
+}
+
+.breadcrumbs__item::after{
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
+/* Активная ссылка в breadcrumbs */
+.breadcrumbs__item--active {
+  cursor: default !important;
+  font-weight: 600 !important;
+  line-height: 21px !important;
+  background: none !important;
+  color: var(--color-grey-text) !important;
+}
+[data-theme='dark'] .breadcrumbs__item--active{
+  color: var(--color-dark-text) !important;
+}
+/* Селектор для span внутри активного элемента breadcrumbs */
+.breadcrumbs__item--active span {
+  font-weight: 600 !important;
+  line-height: 21px !important;
+  color: var(--color-grey-text) !important;
+}
+[data-theme='dark'] .breadcrumbs__item--active span{
+  color: var(--color-dark-text) !important;
+}
+.breadcrumbs__item:not(:last-child):after {
+  background-image: var(--ifm-breadcrumb-separator);
+}
+
+
+
+/* Стили для TOC */
+/* Основной контейнер TOC */
+.table-of-contents {
+  border: none !important;
+  /* Добавьте ваши стили здесь */
+}
+.table-of-contents li{
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+
+/* Ссылки в TOC */
+.table-of-contents__link {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  color: var(--color-grey-text);
+  /* Добавьте ваши стили здесь */
+}
+
+/* Стили для темной темы - TOC ссылки */
+[data-theme='dark'] .table-of-contents__link {
+  color: var(--color-dark-text) !important;
+}
+
+[data-theme='dark'] .table-of-contents__link:hover {
+  color: var(--color-dark-text) !important;
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  color: var(--color-dark-text) !important;
+}
+
+[data-theme='dark'] .table-of-contents__link.toc-highlight {
+  color: var(--color-dark-text) !important;
+}
+
+[data-theme='dark'] .table-of-contents__link.toc-highlight.table-of-contents__link--active {
+  color: var(--color-dark-text) !important;
+}
+
+/* Активная ссылка в TOC */
+.table-of-contents__link--active {
+  font-weight: 600 !important;
+    line-height: 21px !important;
+    font-size: 16px !important;
+  /* Добавьте ваши стили здесь */
+}
+
+
+
+/* Колонка для TOC */
+:global(.col--3) {
+  max-width: 315px;
+  --ifm-col-width: 100%;
+}
+
+@media (max-width: 1500px) {
+  :global(.col--3) {
+    max-width: calc(3 / 12 * 100%) !important;
+  }
+}
+
+
+/* Удаление flex свойства для колонок */
+.col[class*='col--'] {
+  flex: none !important;
+}
+
+
+
+.table-of-contents__link:hover {
+  color: var(--color-grey-text) !important;
+  opacity: 0.8;
+  /* Стили при наведении на ссылку */
+}
+
+
+
+/* Скрытие навигационных ссылок "Предыдущий/Следующий" */
+.pagination-nav {
+  display: none !important;
+}
+
+/* Альтернативный способ скрытия через классы кнопок */
+.pagination-nav__link--prev,
+.pagination-nav__link--next {
+  display: none !important;
+}
+
+/* Скрытие всей навигационной секции */
+nav[aria-label="Docs pages"] {
+  display: none !important;
+}
+.theme-doc-toc-mobile{
+  display: none !important;
+}
+
+/* ===================== */
+/* Стили для блоков кода с заголовком */
+/* ===================== */
+.theme-code-block {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fafbfc;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  margin: 1.5em 0;
+  overflow: hidden;
+  position: static;
+}
+
+.theme-code-block > :last-child {
+  position: static;
+}
+
+
+
+.theme-code-block >:first-child {
+  background: var( --color-gray-f9);
+  
+  border:none;
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+}
+
+.theme-code-block pre {
+  background: rgb(249, 250, 251);
+  margin: 0;
+  padding: 1em;
+  font-size: 1em;
+}
+.theme-code-block button {
+  opacity: 1 !important;
+  background: var( --color-gray-f3) !important;
+  border-radius: 0 !important
+}
+.theme-code-block button:hover {
+  color: var(--color-smokey-grey) !important;
+}
+
+[data-theme='dark'] .theme-code-block button {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border:none !important;
+}[data-theme='dark'] .theme-code-block button:hover {
+  opacity: 0.8 !important;
+}
+
+/* Для темной темы */
+[data-theme='dark'] .theme-code-block {
+  background: #23272f;
+  border-color: #343a46;
+}
+[data-theme='dark'] .theme-code-block .codeBlockTitle {
+  background: #23272f;
+  color: #bfc7d5;
+  border-bottom: 1px solid #343a46;
+}
+[data-theme='dark'] .theme-code-block pre {
+  color: #e6e6e6;
+}
+
+/* Стили для вкладок */
+.tabs-container {
+  background-color:var(--color-gray-f3);
+  border-radius: 15px;
+  position: relative;
+}
+[data-theme='dark'] .tabs-container{
+  background-color:var(--color-dark-footer-bg) ;
+}
+
+.tabs-container .tabs {
+  border-bottom: none;
+  background-color: transparent !important;
+}
+
+
+.tab-item-container{
+  margin-top: -1rem;
+}
+
+.tab-item-container div:not(:has(> button:first-child)){
+  border:none !important;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: var(--color-gray-f9);
+}
+[data-theme='dark'] .tab-item-container div:not(:has(> button:first-child)){
+  background-color: var(--color-dark-footer-bg);
+}
+[data-theme='dark'] .tabs-container .margin-top--md{
+  background-color: var(--color-dark-footer-bg);
+  border-radius: 10px;
+}
+
+.tabs-container .tabs__item {
+  padding: 0.25rem 0.5rem;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  color: var(--color-gray-4b);
+  margin-left: 5px;
+  margin-top: 5px !important;
+  border:none;
+  border-radius: 10px;
+}
+
+.tabs-container .tabs__item:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.tabs-container .tabs__item--active {
+  background-color: white;
+}
+
+[data-theme='dark'] .tabs-container .tabs__item--active{
+  background-color: var(--color-dark-footer-bg);
+}
+
+.tabs-container .tabs__item--active:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* Стили для содержимого вкладок */
+.tabs-container .tabs__content {
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: var(--ifm-background-color);
+}
+
+/* Стили для кода внутри вкладок */
+.tabs-container .tabs__content pre {
+  margin: 0;
+  border-radius: 4px;
+  
+}
+[data-theme='dark'] .tabs-container .tabs__content pre{
+  background-color: var(--color-dark-footer-bg) !important;
+}
+.theme-code-block pre {
+  padding: 0;
+}
+[data-theme='dark'] .theme-code-block pre {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+.theme-code-block code {
+  padding: 21px 14px;
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+}
+.theme-code-block code span {
+  
+  font-family: inherit !important;
+}
+
+
+/* Анимация при переключении вкладок */
+.tabs-container .tabs__content {
+  transition: opacity 0.2s ease;
+}
+
+.tabs-container .tabs__content--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Стили для таблиц в документации */
+.markdown table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--color-brand-tint);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid var(--color-gray-f3);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  line-height: 19px !important;
+}
+
+.markdown th {
+  background: var(--color-brand-tint);
+  
+}
+
+.markdown tbody tr:nth-child(even) {
+  background: white;
+}
+
+/* Внутренние горизонтальные линии */
+.markdown tbody td {
+  border: none !important;
+  border-bottom: 1px solid var(--color-gray-f3)!important;
+  border-right: 1px solid var(--color-gray-f3)!important;
+}
+.markdown tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Убираем лишние старые правила */
+.markdown table thead {
+  border: none !important;
+}
+
+/* Внутренние границы для ячеек таблицы */
+.markdown th:first-child,
+.markdown td:first-child {
+  border-left: none;
+}
+.markdown th:last-child,
+.markdown td:last-child {
+  border-right: none !important;
+}
+.markdown tr:first-child th,
+.markdown tr:first-child td {
+  border-top: none;
+}
+
+.markdown tr:last-child td:last-child {
+  border-bottom: none !important;
+  border-right: none !important;
+}
+.markdown tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* ===================== */
+/* Стили для блоков с информацией */
+/* ===================== */
+.theme-admonition > :first-child{
+  display: none !important;
+}
+
+.theme-admonition p:has(code) {
+  overflow-x: auto;
+  padding-bottom: 5px;
+
+}
+
+.theme-admonition a {
+  text-decoration: none !important;
+  color: var(--color-tint) !important;
+}
+.theme-admonition code{
+  padding: 0 !important;
+  white-space: nowrap;
+}
+
+.theme-admonition {
+  background-color: var(--color-brand-tint);
+  color:var(--color-gray-08);
+  border:none !important;
+  position: relative;
+  padding-left: 57px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+
+}
+[data-theme='dark'] .theme-admonition{
+  background-color: var(--color-dark-footer-bg);
+  color: var(--color-dark-text);
+}
+.theme-admonition p {
+  line-height: 19px !important;
+}
+.theme-admonition::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 25px;
+  top: 22px;
+  
+  width: 20px;
+  height: 20px;
+  background-image: url('/img/icons/warning.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Стили для выпадающего списка (accordion) */
+details {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 8px;
+  margin: 24px 0;
+  padding: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+
+details[open] {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+details > summary {
+  font-weight: 600;
+  font-size: 18px;
+
+  cursor: pointer;
+  outline: none;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+details > summary::-webkit-details-marker,
+details > summary::marker {
+  display: none;
+}
+
+details > summary:before {
+  content: "";
+  background-image: url('/img/arrow.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border:none !important;
+  width: 18px !important;
+  height: 18px !important;
+  transition: none !important;
+  top: 4px !important;
+  left: -5px !important;
+}
+details[data-collapsed='false'] > summary:before{
+  transform: rotate(90deg);
+  top: -1px !important;
+  left: 0 !important;
+}
+
+
+details > *:not(summary) {
+  padding: 0 32px 18px 40px;
+}
+
+details div{
+  border:none !important;
+  padding-left: 15px !important;
+  padding-bottom: 0px !important;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  will-change: auto;
+  transition: none !important;
+}
+
+details ul, details ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+details li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+  list-style-type: disc;
+}
+
+details code {
+  background-color: var(--color-brand-tint);
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-weight: 300 !important;
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+  border: none !important;
+}
+
+/* Стили для боковой панели */
+@media (max-width: 996px) {
+  .theme-doc-sidebar-container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 300px;
+    background: white;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar-open .theme-doc-sidebar-container {
+    left: 0;
+  }
+
+  .sidebar-open .theme-doc-sidebar-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+/* Стили для бренда в боковой панели */
+.navbar-sidebar__brand {
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px 30px !important;
+  border-bottom: 1px solid var(--color-gray-e0) !important;
+}
+
+
+.navbar-sidebar__brand div[class^="toggle"]{
+  display: none !important;
+}
+
+
+.navbar-menu-close-btn::after {
+  content: '' !important;
+  display: block !important;
+  width: 128px !important;
+  height: 25px !important;
+  background-image: url('/img/PassworkLogo2.svg') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  margin-right: 12px !important;
+  margin-left: 20px !important;
+}
+
+.navbar-sidebar__brand .navbar__title {
+  display: none !important;
+}
+.navbar-sidebar__close::before{
+  content: '' !important;
+  display: block !important;
+  width: 15px !important;
+  height: 15px !important;
+  background-image: url('/img/icons/cross.svg') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+
+.navbar-sidebar__close svg{
+  display: none !important;
+}
+
+/* ===================== */
+/* Глобальные стили для обеспечения совместимости */
+/* ===================== */
+
+/* Обеспечиваем доступность CSS переменных глобально */
+* {
+  box-sizing: border-box;
+}
+
+/* Дополнительные глобальные переменные для совместимости */
+:root {
+  /* Переменные для отступов */
+  --ifm-spacing-horizontal: 1rem;
+  --ifm-spacing-vertical: 1rem;
+  
+  /* Переменные для цветов фона */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
+  
+}
+
+

@@ -1,0 +1,116 @@
+---
+title: Импорт данных
+slug: import-papka
+createdAt: Tue Aug 29 2023 12:14:31 GMT+0000 (Coordinated Universal Time)
+updatedAt: Tue Jun 17 2025 09:03:54 GMT+0000 (Coordinated Universal Time)
+description: "Как импортировать пароли в Passwork из файлов JSON, KeePass XML и CSV, а также вручную. Поддержка структуры папок, выбор метода импорта, сопоставление полей."
+keywords: ['Passwork', 'импорт', 'пароли', 'JSON', 'KeePass XML', 'CSV', 'ручной ввод', 'структура папок', 'выбор метода импорта', 'сопоставление полей']
+---
+
+Пассворк позволяет быстро импортировать пароли, хранящиеся в форматах **JSON**, **KeePass XML** и **CSV**, в нужные сейфы, папки или в корневой каталог Пассворка. В файлах формата JSON и XML информация хранится в структурированном виде, в то время как CSV хранит исходные данные в виде обычного текста.
+
+Чтобы воспользоваться импортом, откройте меню **Настроек папки** и нажмите **Импорт данных**:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-wqNq8yB7pJ2YonRzo6_lc-20250409-122800.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+Вы можете импортировать данные как автоматически из файла, так и посредством ручного ввода.
+
+## Импорт из файла
+
+Вы можете загрузить файлы в форматах **JSON**, **KeePass XML** и **CSV**.
+
+Для импорта файла нажмите кнопку **Выбрать файл** во всплывающем окне **Импорта данных**:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-EN7Nq9UAFHelJcF_jLjZN-20250314-144408.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+При загрузке файлов **JSON** или **KeePass XML** вы сможете выбрать, какие папки импортировать, а также выбрать метод импорта.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-oTLRj5DHFGcM23miKnaOQ-20250314-145242.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+При выборе целевого расположения можно:
+
+- **Сохранить структуру и импортировать в указанную директорию:** Все выбранные сейфы будут превращены в папки внутри целевого сейфа или папки. Структура папок будет воссоздана, а все пароли останутся в своих исходных папках.
+- **Игнорировать структуру и импортировать в указанную директорию:** Все пароли будут сохранены в определенном сейфе или папке, но структура не будет воссоздана.
+- **Сохранить структуру и импортировать в корневую директорию:** Все выбранные сейфы и их структура будут воссозданы. Пароли останутся в папках, из которых они были экспортированы.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-YcXKJCIamaR3zwpDXtmvm-20250314-145310.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+При импорте **CSV-файла** вы попадете на вкладку предварительного просмотра данных. Здесь также потребуется выбрать разделитель.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-2V1U-QMnizcMtbIIjs_Yy-20250314-155410.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+Последующие этапы импорта CSV-файла аналогичны этапам **ручного ввода** данных.
+
+## Ручной ввод
+
+### Для импорта данных вставьте данные во вкладке Ручной ввод и выберите разделитель:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-L3SUi9jrSApmN--7Lrkmi-20250317-091411.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Сопоставьте поля карточки пароля с введенными данными:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-cdqntMO_0YP-6Iv4o4lFe-20250317-091603.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Затем проверьте правильность сопоставления:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-haLren5bq6i0fUP9iRXln-20250317-091940.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### И выберите место для импортирования данных:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-m9eW3pQo1xHtvFcpc6kiH-20250317-094931.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+***

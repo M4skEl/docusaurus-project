@@ -1,0 +1,508 @@
+@import '../../common/constants/colors.css';
+
+.navbarWrapper {
+  margin: 0;
+  padding: 0;
+  background: white;
+  box-shadow: none;
+  height: auto;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  
+  margin: 0 auto;
+  z-index: 13;
+  height: 60px;
+  border-bottom: 1px solid var(--color-gray-e0);
+  font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+}
+
+/* Темная тема для navbarWrapper */
+:global([data-theme='dark']) .navbarWrapper {
+  background: var(--color-dark-bg);
+  border-bottom: 1px solid var(--color-dark-light-bg);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Темная тема для menuButton */
+:global([data-theme='dark']) .menuButton {
+  color: #e0e0e0;
+}
+
+.navbarWrapper img{
+  margin-bottom: 0px !important;
+}
+
+/* Скрываем фиксированную навигацию */
+.navbarWrapper :global(.navbar--fixed-top) {
+  display: none !important;
+}
+@media (max-width: 996px) {
+  .navbarWrapper :global(.navbar--fixed-top) {
+    display: inline-block !important;
+    
+    padding: 0 !important;
+    height: 0 !important;
+    
+  }
+  .navbarWrapper :global(.navbar__inner) {
+    display: none !important;
+  }
+}
+
+/* Скрываем все элементы навигации кроме первого */
+.navbarWrapper :global(.navbar__items) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  flex-direction: row;
+}
+
+.navbarWrapper :global(.navbar__items > *:not(:first-child)) {
+  display: none;
+}
+
+/* Скрываем иконку смены темы */
+.navbarWrapper :global(.navbar__items--right) {
+  display: none !important;
+}
+
+/* Стили для контейнера контента */
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  position: relative;
+  max-width: 1400px;
+}
+
+/* Темная тема для navbarContent */
+:global([data-theme='dark']) .navbarContent {
+  background-color: var(--color-dark-bg);
+}
+
+@media (max-width: 996px) {
+  .navbarContent{
+    justify-content: flex-start;
+  }
+}
+
+/* Стили для ссылки с логотипом */
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Стили для логотипа */
+.logo {
+  height: 25px !important;
+  width: 128px !important;
+  min-width: 128px !important;
+  margin-right: 20px;
+  display: block;
+}
+@media (max-width: 996px) {
+  .logo{
+    margin-right: 12px;
+  }
+}
+
+/* Скрываем обычный логотип в темной теме */
+:global([data-theme='dark']) .logo {
+  display: none;
+}
+
+/* Стили для логотипа темной темы */
+.logoDark {
+  height: 25px !important;
+  width: 128px !important;
+  min-width: 128px !important;
+  margin-right: 20px;
+  display: none;
+}
+@media (max-width: 996px) {
+  .logoDark{
+    margin-right: 12px;
+  }
+}
+
+/* Показываем темный логотип только в темной теме */
+:global([data-theme='dark']) .logoDark {
+  display: block;
+}
+
+@media (max-width: 996px) {
+  .menuButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/* Стили для блока поиска */
+.searchContainer {
+  width: 100%;
+  max-width: 770px;
+  height: 35px;
+  background: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Темная тема для searchContainer */
+:global([data-theme='dark']) .searchContainer {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 996px) {
+  .searchContainer{
+    display: none;
+}}
+/* Стили для логотипа/заголовка */
+.navbarWrapper :global(.navbar__brand) {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--ifm-navbar-link-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-right: 2rem;
+}
+
+.navbarWrapper :global(.navbar__brand:hover) {
+  color: var(--ifm-color-primary);
+}
+
+/* Стили для ссылок в навигации */
+.navbarWrapper :global(.navbar__link) {
+  color: var(--ifm-navbar-link-color);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbarWrapper :global(.navbar__link:hover) {
+  color: var(--ifm-color-primary);
+}
+
+/* Стили для активных ссылок */
+.navbarWrapper :global(.navbar__link--active) {
+  color: var(--ifm-color-primary);
+}
+
+/* Стили для кнопок в навигации */
+.navbarWrapper :global(.navbar__item--button) {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.navbarWrapper :global(.navbar__item--button:hover) {
+  background-color: var(--ifm-color-primary-darker);
+  color: white;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: 20px;
+}
+@media (max-width: 996px) {
+  .rightContainer{
+    margin-left: 0;
+  }
+}
+
+.versionSelect {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 4px 18px 4px 12px;
+  font-size: 18px;
+  color: #555;
+  background: #fff;
+  appearance: none;
+  outline: none;
+  height: 38px;
+  box-sizing: border-box;
+  font-weight: 500;
+  box-shadow: none;
+  transition: border 0.2s;
+  font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+}
+
+/* Темная тема для versionSelect */
+:global([data-theme='dark']) .versionSelect {
+  border: 1.5px solid var(--color-dark-light-bg);
+  color: #e0e0e0;
+  background: var(--color-dark-bg);
+}
+
+:global([data-theme='dark']) .versionSelect:hover {
+  border-color: #666;
+}
+
+.versionSelectWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.versionSelectArrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.versionSelectArrowOpen {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Темная тема для versionSelectArrow */
+:global([data-theme='dark']) .versionSelectArrow {
+  filter: invert(1);
+}
+
+.themeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b0b0;
+  transition: background 0.2s;
+}
+
+.themeBtn:hover{
+  opacity: 0.8;
+}
+
+/* Темная тема для themeBtn */
+:global([data-theme='dark']) .themeBtn {
+  color: #e0e0e0;
+}
+
+.flag {
+  width: 26px;
+  height: 18px;
+}
+@media (max-width: 996px) {
+  .themeBtn, .flag{
+    display: none;
+  }
+}
+
+.navbarWrapper :global(.navbar-sidebar__back){
+  display: none !important;
+}
+
+/* Темная тема для navbar-sidebar */
+:global([data-theme='dark']) .navbarWrapper :global(.navbar-sidebar) {
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+}
+
+.navbarWrapper :global(.navbar-sidebar__backdrop){
+  transition: none;
+}
+
+.navbarWrapper :global(.navbar-sidebar){
+  transition: none;
+}
+
+/* Стили для кнопки закрытия сайдбара */
+:global(.navbar-menu-close-btn) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray-85);
+  padding: 0;
+}
+
+/* Темная тема для кнопки закрытия */
+:global([data-theme='dark']) :global(.navbar-menu-close-btn) {
+  color: #e0e0e0;
+}
+
+:global(.theme-doc-sidebar-menu) {
+  margin-right: 25px;
+}
+
+:global(.navbar-menu-close-btn img) {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* Темная тема для иконки закрытия */
+:global([data-theme='dark']) :global(.navbar-menu-close-btn img) {
+  filter: invert(1);
+}
+
+/* Стили для мобильного контейнера поиска */
+.mobileSearchContainer {
+  display: none;
+}
+
+.mobileSearchButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Темная тема для mobileSearchButton */
+:global([data-theme='dark']) .mobileSearchButton {
+  color: #e0e0e0;
+}
+
+:global([data-theme='dark']) .mobileSearchButton:hover {
+  background-color: var(--color-dark-light-bg);
+}
+
+.mobileSearchInputContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px 30px;
+  border-bottom: 1px solid var(--color-gray-e0);
+  z-index: 1000;
+}
+
+/* Темная тема для mobileSearchInputContainer */
+:global([data-theme='dark']) .mobileSearchInputContainer {
+  background: var(--color-dark-bg);
+  border-bottom: 1px solid var(--color-dark-light-bg);
+}
+
+.mobileSearchCloseButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Темная тема для mobileSearchCloseButton */
+:global([data-theme='dark']) .mobileSearchCloseButton {
+  color: #e0e0e0;
+}
+
+:global([data-theme='dark']) .mobileSearchCloseButton:hover {
+  background-color: var(--color-dark-light-bg);
+}
+
+@media (max-width: 996px) {
+  .mobileSearchContainer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    
+  }
+  
+  .mobileSearchInputContainer {
+
+    z-index: 1001;
+  }
+}
+
+/* Дополнительные стили для темной темы */
+
+/* Темная тема для всех элементов навбара */
+:global([data-theme='dark']) .navbarWrapper :global(.navbar__brand) {
+  color: #e0e0e0;
+}
+
+:global([data-theme='dark']) .navbarWrapper :global(.navbar__link) {
+  color: #e0e0e0;
+}
+
+:global([data-theme='dark']) .navbarWrapper :global(.navbar__link:hover) {
+  color: var(--ifm-color-primary);
+}
+
+/* Темная тема для dropdown элементов */
+:global([data-theme='dark']) .navbarWrapper :global(.dropdown__menu) {
+  background-color: var(--color-dark-bg);
+  border: 1px solid var(--color-dark-light-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+:global([data-theme='dark']) .navbarWrapper :global(.dropdown__link) {
+  color: #e0e0e0;
+}
+
+:global([data-theme='dark']) .navbarWrapper :global(.dropdown__link:hover) {
+  background-color: var(--color-dark-light-bg);
+  color: #fff;
+}
+
+/* Темная тема для мобильного меню */
+:global([data-theme='dark']) .navbarWrapper :global(.navbar-sidebar__items) {
+  background-color: var(--color-dark-bg);
+}
+
+:global([data-theme='dark']) .navbarWrapper :global(.navbar-sidebar__item) {
+  color: #e0e0e0;
+}
+
+:global([data-theme='dark']) .navbarWrapper :global(.navbar-sidebar__item:hover) {
+  background-color: var(--color-dark-light-bg);
+}
+
+
+
+
+

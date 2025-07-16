@@ -1,0 +1,73 @@
+.languageSelect {
+    position: relative;
+    font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+}
+
+.selectButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: 18px; 
+    font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+}
+.selectButton:hover .arrowIcon{
+    opacity: 0.8;
+}
+.selectButton:hover .arrowUp {
+    opacity: 0.8;
+}
+
+.selectButton:hover span {
+    opacity: 0.8;
+}
+
+.flagIcon {
+    width: 26px !important;
+    height: 18px !important;
+    margin-right: 6px;
+}
+
+.arrowIcon {
+    width: 20px;
+    margin-left: 6px;
+    transform: rotate(90deg);
+}
+
+.arrowIcon.arrowUp {
+    transform: rotate(-90deg);
+}
+
+.languageList {
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 8px;
+    list-style: none;
+    margin: 0;
+    padding: 4px;
+    z-index: 1000;
+}
+
+.languageItem {
+    padding: 7px 9px;
+    cursor: pointer;
+    line-height: 19px !important;
+    font-family: 'Museo Sans Cyrillic', system-ui, -apple-system, sans-serif;
+}
+
+.languageItem:hover {
+    background-color: rgba(79, 132, 226, 0.1)
+}
+
+.languageItem.selectedItem {
+    color: rgb(194, 194, 194);
+    cursor: default;
+    pointer-events: none;
+}

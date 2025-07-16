@@ -1,0 +1,14 @@
+@import "../../common/constants/colors.css";
+
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.lastUpdateDate {
+  color: var(--color-gray-85);
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 300;
+}

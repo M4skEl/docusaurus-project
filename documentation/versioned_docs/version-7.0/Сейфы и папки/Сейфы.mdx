@@ -1,0 +1,126 @@
+---
+title: Сейфы
+slug: seify
+createdAt: Wed Oct 02 2024 14:57:22 GMT+0000 (Coordinated Universal Time)
+updatedAt: Thu Jun 19 2025 07:44:35 GMT+0000 (Coordinated Universal Time)
+description: "Описание типов сейфов в Passwork, их создание, управление доступом, панель управления и быстрый просмотр прав."
+keywords: ['Passwork', 'сейфы', 'приватные сейфы', 'общие сейфы', 'доступ', 'панель управления', 'права доступа', 'создание сейфа']
+---
+
+Сейфы Пассворка — это зашифрованные контейнеры корневого уровня, в которых хранятся папки и пароли. Сейфы используют специальный криптографический алгоритм, который обеспечивает сохранность ваших данных.
+
+В Пассворке есть два типа сейфов: **приватные сейфы** и **общие сейфы**.
+
+**Приватные сейфы** — персональные хранилища, доступ к которым есть только у их владельца. Администраторы и другие пользователи не могут просматривать их содержимое без разрешения. По умолчанию каждый новый сейф создаётся приватным. Владелец сейфа может пригласить других пользователей и настроить для них права доступа.
+
+:::info
+Приватный сейф становится общим при добавлении в него других пользователей
+:::
+
+**Общие сейфы** — основной инструмент для совместной работы в Пассворке. Используйте их, чтобы хранить и делиться доступами внутри команды, отдела или между проектами.
+
+Оба типа сейфов поддерживают многоуровневую структуру на основе папок: администраторы могут выстраивать иерархию сейфов с вложенными в них папками.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-W1IC4r0twBczu0CfSbNQW-20250320-095150.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+:::tip
+1. Приватные сейфы  
+2. Общие сейфы  
+3. Скрытые сейфы
+:::
+
+## Создать сейф
+
+Нажмите на **значок плюса** чтобы создать сейф соответствующего типа:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-2YsfxQWhE3rBMjKEd1eJ0-20250312-125937.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+## Панель управления сейфом
+
+**Панель управления сейфом** отображается в верхней части области просмотра при выборе сейфа. С помощью нее можно создать папку и добавить пароль, просмотреть права доступа и открыть меню **настроек сейфа**.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-92qejHTtSItgJrCQKxSuP-20250312-125948.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Права доступа
+
+**Администраторы** могут добавлять, удалять или изменять уровни доступа для пользователей и ролей, имеющих доступ к сейфу. Нажмите на любой элемент **панели управления сейфом**, чтобы открыть соответствующие настройки доступа.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-TJMH0cTrSPoAw6uzf9Sr9-20250312-131144.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+#### Окно **пользователей** и **групп**
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-i_dCHWfHQ6U0JALI-MV7h-20250313-120345.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+#### Окно запросов
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-7zArLORitNcAY2OF5MC2M-20250310-091025.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+#### **Отправленные пароли**, **ссылки** и **ярлыки**
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-APQcLyD41gYn4GDmBlqa8-20250313-120336.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Меню **настроек сейфа**
+
+Через меню **настроек сейфа** вы можете **создать папку**, **переименовать** сейф, просмотреть **историю действий** с сейфом, **скрыть** сейф, **покинуть** или **удалить** его, а также **импортировать** или **экспортировать** данные сейфа.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-9JbrV1LEufpAR5Y4Y1mLN-20250403-091133.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+## Быстрый просмотр доступов
+
+Администраторы могут быстро просматривать и управлять отправленными паролями, контролировать права доступа пользователей и ролей, наведя курсор на иконку справа от названия сейфа:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-mcXLZGJ2N2ASyIXCbZlEr-20250312-132948.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>

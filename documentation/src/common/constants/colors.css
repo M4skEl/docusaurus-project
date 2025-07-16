@@ -1,0 +1,39 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-tint: #4F84E2;
+  --color-hover-tint: #4D87E2;
+  --color-brand-tint: #EDF2FC;
+  --color-footer-tint: #ECF2FB;
+  --color-brand-tint-40: #4F84E240;
+  --color-brand-tint-f0: #A6C1F0;
+  --color-grey: #AAAAAA;
+  --color-grey-text: #4A4A4A;
+  --color-smokey-grey: #9ca3af;
+
+
+  --color-gray-body: #F7F8FA;
+  --color-gray-33: #333333;
+  --color-gray-85: #858585;
+  --color-gray-c2: #C2C2C2;
+  --color-gray-e0: #E0E0E0;
+  --color-gray-f0: #F0F0F0;
+  --color-gray-ea: #EAEAEA;
+  --color-gray-08: #080808;
+  --color-gray-1f: #1F1F1F;
+  --color-gray-00-26: #00000026;
+  --color-gray-00-1a: #0000001A;
+  --color-gray-00-0d: #0000000D;
+  --color-gray-f5: #F5F5F5;
+  --color-gray-eb: #EBEBEB;
+  --color-gray-f3: #F3F4F6;
+  --color-gray-4b:#4b5563; 
+  --color-gray-f9: #f9fafc;
+
+
+  --color-dark-bg: #232528;
+  --color-dark-light-bg: #35373A;
+  --color-dark-text: #C2C2C2;
+  --color-dark-sidebar-bg:#2C2E30;
+  --color-dark-footer-bg:rgba(79, 132, 226, 0.1);
+
+} 

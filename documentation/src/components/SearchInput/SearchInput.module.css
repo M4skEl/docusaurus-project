@@ -1,0 +1,74 @@
+@import '../../common/constants/colors.css';
+
+.container {
+  display: flex;
+  align-items: center;
+  background: #F7F8FA;
+  border-radius: 6px;
+  padding: 0 16px;
+  height: 40px;
+  box-sizing: border-box;
+  border: none;
+  width: 100%;
+}
+
+/* Темная тема */
+[data-theme='dark'] .container {
+  background: var(--color-dark-light-bg);
+}
+
+@media (max-width: 996px) {
+  .container{
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    height: 35px;
+  }
+  
+  /* Темная тема для мобильных устройств */
+  [data-theme='dark'] .container {
+    background: none;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+/* Темная тема для иконки */
+[data-theme='dark'] .icon img {
+  filter: brightness(0) saturate(100%) invert(1);
+  opacity: 0.7;
+}
+
+/* Альтернативный способ для SVG через CSS переменную */
+[data-theme='dark'] .icon svg {
+  color: var(--color-grey-text);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--color-gray-4b);
+  height: 100%;
+}
+
+/* Темная тема для текста ввода */
+[data-theme='dark'] .input {
+  color: var(--color-gray-85);
+}
+
+.input::placeholder {
+  color: var(--color-gray-c2);
+  opacity: 1;
+}
+
+/* Темная тема для плейсхолдера */
+[data-theme='dark'] .input::placeholder {
+  color: var(--color-gray-85);
+}

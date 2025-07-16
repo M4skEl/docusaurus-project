@@ -1,0 +1,8 @@
+{
+  "label": "Browser Extension",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "browser-extension/Browser extension"
+  }
+} 

@@ -1,0 +1,355 @@
+---
+sidebar_position: 1
+label: 'Online installation'
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Online installation
+<ReadTime readTime={24} />
+## Minimum system requirements
+
+Passwork is not resource-demanding, and the number of required servers depends on the number of active users, the amount of data stored and the system fault tolerance requirements.
+
+See the [full sistem requirements](./index.md).
+
+:::tip
+
+If your server has 2-4 GB of RAM, we recommend enabling the [SWAP](./index.md) file.
+
+:::
+
+## System update
+
+### DEB-based
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+sudo apt-get update
+```
+  </TabItem>
+</Tabs>
+
+### RPM-based
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+    ```bash
+    sudo yum update
+    ```
+  </TabItem>
+</Tabs>
+
+
+## Docker installation
+
+Download and install Docker *v.18.06.0* or higher. See the official installation guide by Docker.
+
+Install and enable the Docker Compose plugin. See the official installation guide by Docker.
+:::tip
+
+We recommend using a non-Snap version of Docker
+
+:::
+
+## Passwork installation
+
+To install Passwork, you need to download and run the script that will install all the necessary components.
+
+Create a directory and open it:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+    ```bash
+    mkdir your_directory
+    cd your_directory
+    ```
+  </TabItem>
+</Tabs>
+
+
+Copy the installation script:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+wget https://repos.passwork.pro/repository/docker/passwork_compose_install.sh
+```
+  </TabItem>
+</Tabs>
+
+
+### Authenticity check
+
+Check the hash of the `passwork_compose_install.sh` file to verify its authenticity:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+echo "777ed4567a41f30b98d05524a278bf579c41f08cd8073180a44148d8fd20464d passwork_compose_install.sh" | sha256sum --check
+```
+  </TabItem>
+</Tabs>
+
+
+You should see the message `passwork_compose_install.sh: OK`.
+
+### User rights verification and script execution
+
+If you are installing not as *root*, make sure that the user is a member of the *docker* group.
+
+Confirm that using the following method:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+id $USER | grep docker
+```
+  </TabItem>
+</Tabs>
+
+You can add a user to the *docker* group like this:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+sudo usermod -a -G docker $USER
+```
+  </TabItem>
+</Tabs>
+
+Grant execution rights to the script and run it:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+chmod +x passwork_compose_install.sh
+./passwork_compose_install.sh
+```
+  </TabItem>
+</Tabs>
+
+:::tip
+
+The script uses apt or dnf, as well as curl. If a proxy server is used in your network, you need to add environment variables:
+
+`export http_proxy=http://proxy.example.com:8080`
+`export https_proxy=http://proxy.example.com:8080`
+
+:::
+
+<details>
+  <summary><b>Actions performed by the script</b></summary>
+  <ul>
+    <li>Checking installed Docker</li>
+    <li>Checking Docker version (above 18.06.0)</li>
+    <li>Checking running Docker</li>
+    <li>Checking user for membership in the docker group or having sudo rights</li>
+    <li>Checking if Docker compose plugin is installed and enabled</li>
+    <li>Checking the system for belonging to <code>deb</code> or <code>rpm</code> distribution</li>
+    <li>Installing additional utilities for proper operation of scripts `curl`, <code>unzip</code>, and <code>jq</code></li>
+    <li>Requesting input of Passwork client certificate</li>
+    <li>Checking the certificate for compliance with the format</li>
+    <li>Checking the validity of the certificate</li>
+    <li>Downloading and unpacking the archive with docker-compose build files</li>
+    <li>Checking the environment variables file and adding the certificate number</li>
+    <li>Executing the Passwork code update script</li>
+    <li>Executing <code>docker compose up -d</code></li>
+  </ul>
+</details>
+
+
+#### Process of executing the installation script
+The script will check the rights of the current user, as well as the versions of the necessary components. In case of errors, the script will create an error log with the `install_log_date.log` format
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/DTLvM1aCgBGKQjLfmJsK5_izobrazhenie.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+
+During the execution, the certificate number will be requested from the [Customer portal](/#):
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/Wg8Kw7-RQ_sHzeHimXt8C_cleanshot-2025-04-20-at-094024.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### After the script execution is completed
+
+The script will automatically execute `docker ps`. Please check the list of running containers. If the containers were not started, please check the installation output and log. Example of a correct output:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/XtvWzm5nQd2TL4Lu3BDJI_cleanshot-2025-04-16-at-020229.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+:::tip
+
+Before configuring a web server with SSL termination enabled, familiarize yourself with the ﻿.
+
+:::
+
+### Setup wizard
+
+After building and running the containers, Passwork will be available at the following link: `https://your_servername`
+
+:::tip
+
+By default, Passwork uses a self-signed certificate that is automatically generated during installation, so when you first open the page, you will see a message that the site's certificate is not trusted.
+
+:::
+
+### Choose language
+
+As the first step, the system will offer to choose the interface language:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/Z4ChFKFCyHiCqpxKjVif7_image.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+
+
+### Server configuration checklist
+
+The checklist of parameters will show if all necessary components are installed on your server:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/Z4ChFKFCyHiCqpxKjVif7_image.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+
+### Database connection
+You must use the default MongoDB address to connect:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/IUJxPV95TeihA8SW45Mxu_image.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Passwork configuration
+
+Passwork will generate a new key for server encryption. If you are connecting Passwork to an existing database, specify the existing encryption key:
+
+:::tip
+
+Do not enter a key that was generated outside of Passwork.
+Passwork uses special secure algorithms to generate new keys in required formats. Using keys generated by third-party tools may result in errors.
+
+:::
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/TF7GStJkOT5EgjWIVeJk2_image.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### License key
+You can download the license keys in your [Passwork Customer Portal](/#):
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/xAw2QbMq8rGsHWxYYfQcO_image.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+## Setting up your own SSL certificate
+
+By default, Passwork will generate a self-signed certificate during install. When the installation is complete you will be able to start using proper SSL certificates.
+
+### Use your own certificate
+
+- For certificates issued by a trusted issuer
+
+- For certificates issued by domain certification authorities of your organization
+
+Rename your SSL certificate or certification chain and place it in `./conf/ssl` 
+
+- *privkey.pem* — private key
+- *fullchain.pem* — certificate\certification chain
+
+### Use Let's Encrypt
+
+You can configure Let's Encrypt if you don't have a certificate authority (certificate issued by a trusted center), but you have a public DNS name for the server.
+
+Edit the `.env` file by changing and adding the following parameters:
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="Text" label="Text">
+```
+USE_LETSENCRYPT=true
+LETSENCRYPT_REG_EMAIL=mail@example.com
+DOMAIN=example.com
+COMPOSE_PROFILES="local_notify,mongo,certbot"
+```
+  </TabItem>
+</Tabs>
+
+
+Save the changes and start the container:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+docker compose up -d certbot
+```
+  </TabItem>
+</Tabs>
+
+
+Check the container logs to see if the certificate was issued:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+docker compose logs certbot
+```
+  </TabItem>
+</Tabs>
+
+Example of certificate issuing process:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/ZoZT-rNspEbQohd2CQLT5_image.webp"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+Recreate containers to update data using the new certificates:
+
+<Tabs className="tabs-container">
+  <TabItem className="tab-item-container" value="shell" label="shell">
+```bash
+docker compose up -d --force-recreate nginx certbot
+```
+  </TabItem>
+</Tabs>
+
+As a result, Passwork will be available via the HTTPS protocol using a certificate from *Let's Encrypt*.
+
+<LastUpdateDate children='Updated 28 May 2025' />

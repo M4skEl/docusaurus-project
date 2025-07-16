@@ -1,0 +1,10 @@
+@import '../../common/constants/colors.css';
+
+.textHilighter {
+    background-color: var(--color-brand-tint);
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+    font-weight: 300;
+    
+  } 

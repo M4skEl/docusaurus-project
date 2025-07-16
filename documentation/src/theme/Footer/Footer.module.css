@@ -1,0 +1,74 @@
+@import '../../common/constants/colors.css';
+@import '../../common/fonts/fonts.css';
+
+/* Скрываем оригинальный футер */
+.hideOriginalFooter :global(.footer) {
+  display: none;
+}
+
+/* Стили для нового кастомного футера */
+.customFooter {
+  background-color: var(--color-footer-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-theme='dark'] .customFooter{
+  background-color: var(--color-dark-footer-bg);
+}
+.footerContent{
+    max-width: 1400px;
+    width: 100%;
+    padding: 35px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .footerTitle {
+   font-family: 'Museo Sans Cyrillic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+   font-size: 16px;
+   font-weight: 300;
+   line-height: 19px;
+   color: var(--color-gray-33);
+   margin-bottom: 10px;
+ }
+ [data-theme='dark'] .footerTitle{
+  color: var(--color-dark-text);
+ }
+.socialsContainer{
+    display: flex;
+    gap: 10px;
+}
+.socialsContainer a{
+  height: 24px;
+}
+
+.socialIcon{
+    width: 24px;
+    margin-bottom: 0 !important;
+}
+.socialIcon:hover{
+    opacity: 0.8;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .textContainer {
+    max-width: 260px;
+  }
+}
+

@@ -1,0 +1,154 @@
+---
+title: Двухфакторная аутентификация
+slug: 2fa
+createdAt: Thu Aug 10 2023 08:24:08 GMT+0000 (Coordinated Universal Time)
+updatedAt: Tue Jun 03 2025 09:50:34 GMT+0000 (Coordinated Universal Time)
+description: "Двухфакторная аутентификация (2ФА) в Passwork — дополнительный уровень защиты аккаунта с помощью мобильных приложений и сторонних TOTP-решений."
+keywords: ['Passwork', '2FA', 'двухфакторная аутентификация', 'безопасность', 'Google Authenticator', 'Microsoft Authenticator', 'TOTP', 'мобильное приложение']
+---
+
+:::info
+Мы всегда рекомендуем включать двухфакторную аутентификацию для повышения безопасности вашего аккаунта
+:::
+
+**Двухфакторная аутентификация** защищает ваши уязвимые данные, добавляя дополнительный уровень защиты при входе в систему. 2ФА использует два независимых способа подтверждения входа, что затрудняет несанкционированный доступ к данным, даже если пароль был скомпрометирован.
+
+Чтобы настроить 2ФА, вам понадобится мобильное приложение **Пассворк 2ФА** или любое стороннее приложение, поддерживающее технологию TOTP, например Google Authenticator или Microsoft Authenticator.
+
+## Настройки 2ФА
+
+Настройки двухфакторной аутентификации находятся на странице **Авторизация и 2ФА**, открыть которую можно из меню **Настройки и пользователи** или выбрав соответствующий пункт в выпадающем меню в правой верхней части экрана:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-V42---41H3CeNTDaZ7m1f-20250311-171757.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+В разделе настроек 2ФА нажмите кнопку **Подключить**, выберите приложение, которое вы собираетесь использовать, и нажмите кнопку **Далее**.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-2vW-SSDGUopgwiXUPcpXx-20250312-085923.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-LX6rCo_3VU42B7u5UAJFc-20250312-090550.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+---
+
+### Пассворк 2ФА
+
+Выберите опцию **Приложение Пассворк 2ФА** и загрузите приложение, если оно еще не установлено на вашем мобильном устройстве. Пассворк 2ФА доступен для <a href="https://apps.apple.com/us/app/passwork-2fa/id1632066067" target="_blank">iOS</a> и <a href="https://play.google.com/store/apps/details?id=com.passwork.authenticator" target="_blank">Android</a>, а также в <a href="https://www.rustore.ru/catalog/app/com.passwork.authenticator" target="_blank">RuStore</a>.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-CYzBLy6HPTINtgXyAQ6G7-20250312-090744.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/jvwmQL6VASLd-norgNd8V/C6CC6Uzam1svP35jug27Q_2fa-stores-ru-21.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+Приложение Пассворк 2ФА поддерживает как онлайн, так и офлайн режимы.
+
+#### Подключение Пассворк 2ФА онлайн
+
+Если ваш сервер Пассворка подключен к Интернету, выберите онлайн-режим и отсканируйте QR-код:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-fPnbZHqDd0woQy-UZpF2I-20250312-091249.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+#### Подключение Пассворк 2ФА офлайн
+
+Даже если подключение к Интернету недоступно, вы всегда сможете войти в систему с помощью одноразовых паролей, которые автоматически генерируются внутри приложения.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-Q8uI4czoEU55jL3mzbsn4-20250312-091311.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+:::tip
+1. Перейдите во вкладку **Офлайн**  
+2. Введите **одноразовый код** из приложения Пассворк 2ФА
+:::
+
+---
+
+### Сторонние приложения
+
+Для настройки двухфакторной аутентификации в Пассворке можно использовать любое стороннее приложение, например Google Authenticator или Microsoft Authenticator. Подключите приложение, отсканировав QR-код или введя одноразовый пароль.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-P1ti2WIKbmpQ-uU4GsYBU-20250312-091525.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+:::tip
+1. Отсканируйте **QR-код** или введите **секретный ключ**  
+2. Введите **одноразовый код** из мобильного приложения
+:::
+
+---
+
+## Управление 2ФА
+
+После установки двухфакторной аутентификации, в разделе **Настроек 2FA** вы сможете протестировать 2ФА, загрузить приложение Passwork 2ФА, сбросить 2ФА и настроить ее заново.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-S9bTG4m8qrT_OAyL8qaxE-20250312-092836.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+:::tip
+1. Статус вашей 2ФА  
+2. Протестируйте 2ФА  
+3. Перенастройте 2ФА  
+4. Воспользуйтесь ссылкой на загрузку приложения Пассворк 2ФА  
+5. Сбросьте подключение 2ФА и соответствующие настройки
+:::
+
+### Включение и выключение 2ФА
+
+Вы можете включать и выключать двухфакторную аутентификацию без необходимости настраивать ее заново:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="https://archbee-image-uploads.s3.amazonaws.com/QKZtfOnnubSbfN3D1EPqb-Fl84wzhI1BixQFX83ARpW-20250312-092901.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+---

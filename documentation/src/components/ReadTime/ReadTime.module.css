@@ -1,0 +1,33 @@
+@import '../../common/constants/colors.css';
+
+.readTime {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-gray-85);
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.clockIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  color: var(--color-grey);
+}
+
+.clockIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+
+.timeText {
+  color: var(--color-gray-85);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}

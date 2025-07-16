@@ -1,0 +1,184 @@
+---
+title: Редактировать роль
+slug: redaktirovat-rol
+createdAt: Mon Mar 17 2025 15:06:31 GMT+0000 (Coordinated Universal Time)
+updatedAt: Tue Jun 03 2025 13:55:10 GMT+0000 (Coordinated Universal Time)
+description: "Как редактировать роли, их права и настройки, а также управлять назначенными пользователями в Passwork."
+keywords: ['Passwork', 'роли', 'редактирование', 'назначение', 'права', 'LDAP', 'SSO', 'аккаунт', '2ФА', 'переименование']
+---
+
+Администраторы Пассворка и пользователи с соответствующими правами могут редактировать роли, их права и настройки и управлять назначенными пользователями.
+
+Чтобы отредактировать роль, нажмите на ее название во вкладке **Роли:**
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-xwEnTWuH8rf52XfM-QC5Q-20250417-141010.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+## Назначить роль
+
+Вы можете создавать неограниченное количество ролей и применять их к любому количеству пользователей.
+
+1. Щелкните на **Добавить пользователей** в настройках роли, чтобы назначить роль пользователям:
+
+   <div style={{ textAlign: 'center' }}>
+     <img
+       src="/img/assets/QKZtfOnnubSbfN3D1EPqb-Poel3XhCzgj6SDCnnkUHb-20250417-141142.png"
+       width="600"
+       style={{ display: 'block', margin: '0 auto' }}
+     />
+   </div>
+
+2. Выберите одного или нескольких пользователей во всплывающем окне и сохраните изменения:
+
+   <div style={{ textAlign: 'center' }}>
+     <img
+       src="/img/assets/QKZtfOnnubSbfN3D1EPqb-CQJS9NH6BHbf_gdp_YCZ_-20250417-141158.png"
+       width="600"
+       style={{ display: 'block', margin: '0 auto' }}
+     />
+   </div>
+
+## Снять роль
+
+Чтобы снять роль с пользователя, откройте роль и нажмите на список пользователей роли:
+
+1. 
+
+   <div style={{ textAlign: 'center' }}>
+     <img
+       src="/img/assets/QKZtfOnnubSbfN3D1EPqb-DM80y38Q44NF1aphre5Vz-20250417-141237.png"
+       width="600"
+       style={{ display: 'block', margin: '0 auto' }}
+     />
+   </div>
+
+2. Выберите одного или нескольких пользователей во всплывающем окне и сохраните изменения:
+
+   <div style={{ textAlign: 'center' }}>
+     <img
+       src="/img/assets/QKZtfOnnubSbfN3D1EPqb-5XdZKWqMvsj1mf9Gf9Pmv-20250417-141427.png"
+       width="600"
+       style={{ display: 'block', margin: '0 auto' }}
+     />
+   </div>
+
+## Изменить права и настройки
+
+Вы в любой момент можете изменить права и настройки, которые применяются к пользователям, связанным с ролью. Блоки прав и настроек доступны на странице роли.
+
+### Общие
+
+Здесь вы можете предоставить пользователям права на создание сейфов, просмотр истории действий с настройками и пользователями, информации о лицензии, просмотру и изменению настроек SSO и фоновых задач.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-YjTtBqKFWyK6OjAhYgmSH-20250319-112620.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Системные настройки
+
+Здесь вы можете предоставить пользователям право просматривать и изменять определенные блоки системных параметров.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-xn9HrnlHhCJiQtyE2bH8--20250319-112729.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Настройки LDAP
+
+Здесь вы можете предоставить пользователям право просматривать и изменять параметры LDAP, в том числе добавлять и удалять серверы, регистрировать новых пользователей, управлять списками групп, просматривать и настраивать параметры синхронизации.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-2HJk6HFJOlwLu213d-tDc-20250319-112811.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Управление пользователями
+
+Здесь вы можете предоставить пользователям права доступа к управлению пользователями. Сюда входят все нужные действия с пользователями и ролями, такие как создание, удаление и редактирование пользователей, изменение типа их авторизации и отправка приглашений.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-Uu_TAPiUq3yUI2xOLlLVL-20250319-112826.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+#### Управление пользователями на основе ролей
+
+:::info
+Данный блок доступен только при включенной опции **Просмотр раздела «Управление пользователями»**
+:::
+
+С помощью этого блока вы можете дать одной роли возможность управлять пользователями из другой:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-FNWgTdcu51wDqBhJV7DZF-20250319-113252.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Роли
+
+Здесь вы можете предоставить пользователям право просматривать права и настройки ролей, а также управлять ими.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-4I7Ij_jfCLJxnLCX2OUve-20250319-113309.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Аккаунт
+
+Здесь вы можете предоставить пользователям возможность управлять своим аккаунтом, менять интерфейс, а также пользоваться API, мобильными приложениями и расширением.
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-gsYgGnxUjulzG7qnqZlki-20250319-113321.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+### Авторизация и 2ФА
+
+Здесь вы можете настроить политики безопасности, применяемые к пользователям:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-jWGfp4znz3YGcwTzFuHnT-20250319-113334.png"
+    width="800"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
+
+## Переименовать роль
+
+Вы можете переименовать роль, нажав кнопку **Переименовать** на странице роли:
+
+<div style={{ textAlign: 'center' }}>
+  <img
+    src="/img/assets/QKZtfOnnubSbfN3D1EPqb-UKFLOovkM2HTICZKow6TH-20250417-141530.png"
+    width="600"
+    style={{ display: 'block', margin: '0 auto' }}
+  />
+</div>
